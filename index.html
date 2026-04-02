@@ -1,1 +1,811 @@
-Hello World
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Debmalya Roy — GitHub Profile README</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0d1117;
+    --bg2: #161b22;
+    --bg3: #1c2128;
+    --border: #30363d;
+    --teal: #1D9E75;
+    --teal2: #5DCAA5;
+    --teal3: #0F6E56;
+    --purple: #7F77DD;
+    --purple2: #AFA9EC;
+    --amber: #EF9F27;
+    --text: #e6edf3;
+    --text2: #8b949e;
+    --text3: #484f58;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #0a0c10;
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--text);
+    min-height: 100vh;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .browser-chrome {
+    width: 100%;
+    max-width: 960px;
+    background: #1a1f2e;
+    border-radius: 12px 12px 0 0;
+    padding: 14px 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border: 1px solid #2a3040;
+    border-bottom: none;
+  }
+  .dots { display: flex; gap: 7px; }
+  .dot { width: 12px; height: 12px; border-radius: 50%; }
+  .dot-r { background: #ff5f57; }
+  .dot-y { background: #ffbd2e; }
+  .dot-g { background: #28ca41; }
+  .url-bar {
+    flex: 1;
+    background: #0d1117;
+    border: 1px solid #30363d;
+    border-radius: 6px;
+    padding: 5px 12px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--text2);
+    margin-left: 8px;
+  }
+
+  .readme-wrapper {
+    width: 100%;
+    max-width: 960px;
+    background: var(--bg);
+    border: 1px solid #30363d;
+    border-top: none;
+    border-radius: 0 0 12px 12px;
+    overflow: hidden;
+  }
+
+  /* ── HEADER BANNER ── */
+  .header-banner {
+    background: var(--bg);
+    padding: 48px 48px 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .header-banner::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background:
+      linear-gradient(135deg, rgba(29,158,117,0.06) 0%, transparent 50%),
+      linear-gradient(225deg, rgba(127,119,221,0.06) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  /* Grid pattern */
+  .header-banner::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(var(--bg3) 1px, transparent 1px),
+      linear-gradient(90deg, var(--bg3) 1px, transparent 1px);
+    background-size: 40px 40px;
+    opacity: 0.3;
+    pointer-events: none;
+  }
+
+  .header-content {
+    position: relative;
+    z-index: 1;
+  }
+
+  .typing-line {
+    font-size: 12px;
+    color: var(--teal);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .typing-line::before { content: '❯'; color: var(--teal); }
+  .cursor {
+    display: inline-block;
+    width: 8px;
+    height: 14px;
+    background: var(--teal);
+    animation: blink 1s step-end infinite;
+    vertical-align: middle;
+    margin-left: 2px;
+  }
+  @keyframes blink { 50% { opacity: 0; } }
+
+  .name-block {
+    margin-bottom: 8px;
+  }
+  .name-main {
+    font-family: 'Syne', sans-serif;
+    font-size: 48px;
+    font-weight: 800;
+    color: var(--text);
+    line-height: 1;
+    letter-spacing: -1px;
+  }
+  .name-accent {
+    color: var(--teal);
+  }
+
+  .title-line {
+    font-family: 'Syne', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--teal2);
+    margin-top: 10px;
+    letter-spacing: 0.5px;
+  }
+
+  .subtitle-line {
+    font-size: 13px;
+    color: var(--text2);
+    margin-top: 6px;
+    letter-spacing: 1px;
+  }
+
+  /* Badge row */
+  .badge-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 24px;
+    margin-bottom: 36px;
+  }
+  .badge {
+    padding: 5px 14px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    font-family: 'JetBrains Mono', monospace;
+  }
+  .badge-teal { background: rgba(29,158,117,0.12); color: var(--teal2); border: 1px solid rgba(29,158,117,0.3); }
+  .badge-purple { background: rgba(127,119,221,0.12); color: var(--purple2); border: 1px solid rgba(127,119,221,0.3); }
+  .badge-amber { background: rgba(239,159,39,0.12); color: var(--amber); border: 1px solid rgba(239,159,39,0.3); }
+  .badge-gray { background: rgba(139,148,158,0.1); color: var(--text2); border: 1px solid var(--border); }
+
+  /* Stat pills */
+  .stat-row {
+    display: flex;
+    gap: 0;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+    width: fit-content;
+    margin-bottom: 48px;
+  }
+  .stat-cell {
+    padding: 12px 24px;
+    border-right: 1px solid var(--border);
+    text-align: center;
+  }
+  .stat-cell:last-child { border-right: none; }
+  .stat-num {
+    font-family: 'Syne', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--teal);
+    display: block;
+  }
+  .stat-label {
+    font-size: 10px;
+    color: var(--text3);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    display: block;
+    margin-top: 2px;
+  }
+
+  /* ── BODY ── */
+  .readme-body {
+    padding: 0 48px 48px;
+  }
+
+  /* Section headings */
+  .section-heading {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    margin-top: 40px;
+  }
+  .section-heading::before {
+    content: '##';
+    color: var(--text3);
+    font-size: 14px;
+    font-family: 'JetBrains Mono', monospace;
+  }
+  .section-heading h2 {
+    font-family: 'Syne', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text);
+  }
+  .section-line {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, var(--border) 0%, transparent 100%);
+  }
+
+  /* About block */
+  .about-block {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--teal);
+    border-radius: 0 8px 8px 0;
+    padding: 20px 24px;
+    font-size: 14px;
+    line-height: 1.8;
+    color: var(--text2);
+  }
+  .about-block strong { color: var(--teal2); font-weight: 500; }
+
+  /* Currently building */
+  .building-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  .build-card {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 16px 20px;
+    transition: border-color 0.2s;
+  }
+  .build-card:hover { border-color: var(--teal3); }
+  .build-icon {
+    font-size: 10px;
+    color: var(--teal);
+    font-family: 'JetBrains Mono', monospace;
+    margin-bottom: 8px;
+  }
+  .build-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 4px;
+  }
+  .build-desc {
+    font-size: 12px;
+    color: var(--text2);
+    line-height: 1.6;
+  }
+
+  /* Architecture philosophy */
+  .philosophy-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .philo-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 14px 18px;
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .philo-arrow {
+    color: var(--teal);
+    font-size: 12px;
+    margin-top: 1px;
+    flex-shrink: 0;
+    font-family: 'JetBrains Mono', monospace;
+  }
+  .philo-text { color: var(--text2); line-height: 1.6; }
+  .philo-text strong { color: var(--text); }
+
+  /* Tech stack */
+  .stack-section { margin-bottom: 16px; }
+  .stack-label {
+    font-size: 11px;
+    color: var(--text3);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    font-family: 'JetBrains Mono', monospace;
+  }
+  .tech-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .chip {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    padding: 4px 12px;
+    border-radius: 4px;
+    border: 1px solid var(--border);
+    color: var(--text2);
+    background: var(--bg2);
+  }
+  .chip-go { color: #00ADD8; border-color: rgba(0,173,216,0.3); background: rgba(0,173,216,0.05); }
+  .chip-java { color: #f89820; border-color: rgba(248,152,32,0.3); background: rgba(248,152,32,0.05); }
+  .chip-py { color: #3572A5; border-color: rgba(53,114,165,0.3); background: rgba(53,114,165,0.05); }
+  .chip-aws { color: #FF9900; border-color: rgba(255,153,0,0.3); background: rgba(255,153,0,0.05); }
+  .chip-gcp { color: #4285F4; border-color: rgba(66,133,244,0.3); background: rgba(66,133,244,0.05); }
+  .chip-k8s { color: #326CE5; border-color: rgba(50,108,229,0.3); background: rgba(50,108,229,0.05); }
+  .chip-kafka { color: #231F20; background: rgba(255,255,255,0.07); border-color: rgba(255,255,255,0.1); }
+  .chip-ai { color: var(--teal2); border-color: rgba(29,158,117,0.3); background: rgba(29,158,117,0.05); }
+
+  /* Experience timeline */
+  .timeline {
+    position: relative;
+    padding-left: 24px;
+  }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    bottom: 8px;
+    width: 1px;
+    background: linear-gradient(180deg, var(--teal) 0%, var(--border) 100%);
+  }
+  .timeline-item {
+    position: relative;
+    margin-bottom: 20px;
+    padding-left: 20px;
+  }
+  .timeline-dot {
+    position: absolute;
+    left: -28px;
+    top: 6px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--teal);
+    border: 2px solid var(--bg);
+  }
+  .timeline-dot.dim {
+    background: var(--bg3);
+    border-color: var(--border);
+  }
+  .tl-company {
+    font-family: 'Syne', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--text);
+  }
+  .tl-role {
+    font-size: 12px;
+    color: var(--teal2);
+    margin-top: 1px;
+  }
+  .tl-period {
+    font-size: 11px;
+    color: var(--text3);
+    float: right;
+    font-family: 'JetBrains Mono', monospace;
+  }
+  .tl-highlights {
+    margin-top: 8px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .tl-tag {
+    font-size: 11px;
+    padding: 2px 10px;
+    background: rgba(29,158,117,0.08);
+    border: 1px solid rgba(29,158,117,0.15);
+    border-radius: 4px;
+    color: var(--text2);
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  /* Agentic content footer */
+  .content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 12px;
+  }
+  .content-card {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 18px;
+    text-align: center;
+  }
+  .content-card-icon {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--teal);
+    margin-bottom: 8px;
+  }
+  .content-card-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 4px;
+  }
+  .content-card-sub {
+    font-size: 11px;
+    color: var(--text2);
+    line-height: 1.5;
+  }
+
+  /* Connect row */
+  .connect-row {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 16px;
+  }
+  .connect-btn {
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 500;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    transition: all 0.15s;
+  }
+  .btn-primary { background: var(--teal3); color: var(--teal2); border: 1px solid var(--teal); }
+  .btn-primary:hover { background: var(--teal); color: #fff; }
+  .btn-ghost { background: transparent; color: var(--text2); border: 1px solid var(--border); }
+  .btn-ghost:hover { border-color: var(--teal3); color: var(--teal2); }
+
+  /* Footer note */
+  .readme-footer {
+    border-top: 1px solid var(--border);
+    padding: 20px 48px;
+    font-size: 11px;
+    color: var(--text3);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .readme-footer span { font-family: 'JetBrains Mono', monospace; }
+
+  /* Export note */
+  .export-note {
+    width: 100%;
+    max-width: 960px;
+    margin-top: 16px;
+    padding: 12px 20px;
+    background: rgba(29,158,117,0.08);
+    border: 1px solid rgba(29,158,117,0.2);
+    border-radius: 8px;
+    font-size: 12px;
+    color: var(--teal2);
+    font-family: 'JetBrains Mono', monospace;
+  }
+</style>
+</head>
+<body>
+
+<!-- Browser chrome -->
+<div class="browser-chrome">
+  <div class="dots">
+    <div class="dot dot-r"></div>
+    <div class="dot dot-y"></div>
+    <div class="dot dot-g"></div>
+  </div>
+  <div class="url-bar">github.com / debmalya-roy</div>
+</div>
+
+<div class="readme-wrapper">
+
+  <!-- HEADER -->
+  <div class="header-banner">
+    <div class="header-content">
+      <div class="typing-line">
+        whoami &nbsp;<span class="cursor"></span>
+      </div>
+
+      <div class="name-block">
+        <div class="name-main">Debmalya <span class="name-accent">Roy</span></div>
+        <div class="title-line">Architect of Intelligent Systems</div>
+        <div class="subtitle-line">Staff Engineer · Agentic AI · Distributed Systems · 18+ Years</div>
+      </div>
+
+      <div class="badge-row">
+        <span class="badge badge-teal">🤖 Agentic AI</span>
+        <span class="badge badge-teal">⚡ Distributed Systems</span>
+        <span class="badge badge-purple">🏗 Staff Engineer L6</span>
+        <span class="badge badge-amber">📍 Bengaluru, India</span>
+        <span class="badge badge-gray">@ Coupang</span>
+      </div>
+
+      <div class="stat-row">
+        <div class="stat-cell">
+          <span class="stat-num">18+</span>
+          <span class="stat-label">Years Exp</span>
+        </div>
+        <div class="stat-cell">
+          <span class="stat-num">20M</span>
+          <span class="stat-label">Orders / Day</span>
+        </div>
+        <div class="stat-cell">
+          <span class="stat-num">50M+</span>
+          <span class="stat-label">Txns / Day</span>
+        </div>
+        <div class="stat-cell">
+          <span class="stat-num">30TB</span>
+          <span class="stat-label">Zero-Downtime Migrate</span>
+        </div>
+        <div class="stat-cell">
+          <span class="stat-num">200+</span>
+          <span class="stat-label">Reports Platform</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BODY -->
+  <div class="readme-body">
+
+    <!-- About -->
+    <div class="section-heading">
+      <h2>About me</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="about-block">
+      I build systems that <strong>think, adapt, and act</strong> — not just systems that respond.<br><br>
+      With 18+ years architecting <strong>large-scale distributed backends</strong> at Coupang, Grab, and Zeta,
+      I'm now fully focused on the frontier: <strong>Agentic AI systems</strong> — autonomous agents that
+      plan, use tools, remember context, and orchestrate other agents to solve problems no single model can tackle alone.<br><br>
+      My north star: <strong>distributed systems expertise × LLM orchestration = production-grade agentic infrastructure</strong>.
+      I write, build, and share everything I learn about this shift.
+    </div>
+
+    <!-- Currently building -->
+    <div class="section-heading">
+      <h2>What I'm building</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="building-grid">
+      <div class="build-card">
+        <div class="build-icon">▸ agent-router</div>
+        <div class="build-title">Intent-Based Agent Router</div>
+        <div class="build-desc">Replacing static API gateways with LLM-powered routing that understands user intent and dynamically dispatches to specialist agents.</div>
+      </div>
+      <div class="build-card">
+        <div class="build-icon">▸ multi-agent-orchestrator</div>
+        <div class="build-title">Multi-Agent Orchestration Framework</div>
+        <div class="build-desc">Planner → Retriever → Executor → Validator pipeline with shared memory, tool registries, and feedback loops at scale.</div>
+      </div>
+      <div class="build-card">
+        <div class="build-icon">▸ agent-memory</div>
+        <div class="build-title">Persistent Agent Memory Layer</div>
+        <div class="build-desc">Working, episodic, semantic, and procedural memory for agents — built on vector stores, graph DBs, and skill libraries.</div>
+      </div>
+      <div class="build-card">
+        <div class="build-icon">▸ self-healing-infra</div>
+        <div class="build-title">Self-Healing Distributed Systems</div>
+        <div class="build-desc">Autonomous monitoring agents that detect anomalies, reroute traffic, restart pods, and learn from incidents — zero human paging.</div>
+      </div>
+    </div>
+
+    <!-- Architecture philosophy -->
+    <div class="section-heading">
+      <h2>Architecture philosophy</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="philosophy-list">
+      <div class="philo-item">
+        <span class="philo-arrow">→</span>
+        <span class="philo-text"><strong>API Gateway → Agent Router</strong> — Static routing is dead. Intent-aware dispatch is the new gateway pattern.</span>
+      </div>
+      <div class="philo-item">
+        <span class="philo-arrow">→</span>
+        <span class="philo-text"><strong>Stateless REST → Stateful Agents</strong> — Context that persists across sessions is the foundation of useful autonomous systems.</span>
+      </div>
+      <div class="philo-item">
+        <span class="philo-arrow">→</span>
+        <span class="philo-text"><strong>Single Agent → Swarms</strong> — Specialised agents running in parallel outperform monolithic models every time.</span>
+      </div>
+      <div class="philo-item">
+        <span class="philo-arrow">→</span>
+        <span class="philo-text"><strong>On-call pages → Self-healing</strong> — A system that wakes up a human is a system that hasn't finished being built.</span>
+      </div>
+    </div>
+
+    <!-- Tech stack -->
+    <div class="section-heading">
+      <h2>Tech stack</h2>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="stack-section">
+      <div class="stack-label">Languages</div>
+      <div class="tech-chips">
+        <span class="chip chip-go">Go</span>
+        <span class="chip chip-java">Java</span>
+        <span class="chip chip-py">Python</span>
+      </div>
+    </div>
+    <div class="stack-section" style="margin-top:14px">
+      <div class="stack-label">Cloud &amp; Infrastructure</div>
+      <div class="tech-chips">
+        <span class="chip chip-aws">AWS</span>
+        <span class="chip chip-gcp">GCP</span>
+        <span class="chip chip-k8s">Kubernetes</span>
+        <span class="chip chip-kafka">Kafka</span>
+        <span class="chip">Apache Flink</span>
+        <span class="chip">Apache Spark</span>
+      </div>
+    </div>
+    <div class="stack-section" style="margin-top:14px">
+      <div class="stack-label">Databases</div>
+      <div class="tech-chips">
+        <span class="chip">Cassandra</span>
+        <span class="chip">PostgreSQL</span>
+        <span class="chip">MySQL</span>
+        <span class="chip">ClickHouse</span>
+        <span class="chip">MongoDB</span>
+        <span class="chip">Redis</span>
+        <span class="chip">ElasticSearch</span>
+        <span class="chip">TimescaleDB</span>
+      </div>
+    </div>
+    <div class="stack-section" style="margin-top:14px">
+      <div class="stack-label">Agentic AI</div>
+      <div class="tech-chips">
+        <span class="chip chip-ai">LLM Orchestration</span>
+        <span class="chip chip-ai">RAG Pipelines</span>
+        <span class="chip chip-ai">Tool Use</span>
+        <span class="chip chip-ai">Multi-Agent Systems</span>
+        <span class="chip chip-ai">Vector Stores</span>
+        <span class="chip chip-ai">Agent Memory</span>
+      </div>
+    </div>
+
+    <!-- Experience -->
+    <div class="section-heading">
+      <h2>Experience</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="timeline">
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <span class="tl-period">Sep 2024 – Present</span>
+        <div class="tl-company">Coupang</div>
+        <div class="tl-role">Staff-II Software Engineer (L6-II)</div>
+        <div class="tl-highlights">
+          <span class="tl-tag">20M orders/day</span>
+          <span class="tl-tag">model-based distribution</span>
+          <span class="tl-tag">30TB zero-downtime migration</span>
+          <span class="tl-tag">200+ reports</span>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <span class="tl-period">Sep 2020 – Sep 2024</span>
+        <div class="tl-company">Grab</div>
+        <div class="tl-role">Lead Software Engineer</div>
+        <div class="tl-highlights">
+          <span class="tl-tag">50M txns/day</span>
+          <span class="tl-tag">CDC + Flink + Hudi</span>
+          <span class="tl-tag">GenAI Q&amp;A bot</span>
+          <span class="tl-tag">16TB RDBMS</span>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot dim"></div>
+        <span class="tl-period">Aug 2019 – Jun 2020</span>
+        <div class="tl-company">Zeta</div>
+        <div class="tl-role">Software Architect</div>
+        <div class="tl-highlights">
+          <span class="tl-tag">Kubernetes microservices</span>
+          <span class="tl-tag">API orchestration</span>
+          <span class="tl-tag">Camunda workflows</span>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot dim"></div>
+        <span class="tl-period">Sep 2016 – Aug 2019</span>
+        <div class="tl-company">Publicis Sapient</div>
+        <div class="tl-role">Software Architect</div>
+        <div class="tl-highlights">
+          <span class="tl-tag">ML user journey analysis</span>
+          <span class="tl-tag">5s → 800ms perf</span>
+          <span class="tl-tag">serverless cache</span>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot dim"></div>
+        <span class="tl-period">2012 – 2016</span>
+        <div class="tl-company">Wipro</div>
+        <div class="tl-role">Software Architect</div>
+        <div class="tl-highlights">
+          <span class="tl-tag">SAP CRM integration</span>
+          <span class="tl-tag">OAuth / OTP auth</span>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot dim"></div>
+        <span class="tl-period">Jan 2012 – Oct 2012</span>
+        <div class="tl-company">Oracle</div>
+        <div class="tl-role">Senior Member Technical Staff</div>
+        <div class="tl-highlights">
+          <span class="tl-tag">Oracle Universal Installer</span>
+          <span class="tl-tag">Oracle 11c multi-node SSL</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Content & Thought Leadership -->
+    <div class="section-heading">
+      <h2>Writing &amp; thought leadership</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="content-grid">
+      <div class="content-card">
+        <div class="content-card-icon"># linkedin</div>
+        <div class="content-card-title">LinkedIn</div>
+        <div class="content-card-sub">Architecture diagrams · The API→Agentic shift · Real-world distributed systems</div>
+      </div>
+      <div class="content-card">
+        <div class="content-card-icon"># posts</div>
+        <div class="content-card-title">Technical Writing</div>
+        <div class="content-card-sub">Deep dives on multi-agent orchestration, memory layers, and self-healing infra</div>
+      </div>
+      <div class="content-card">
+        <div class="content-card-icon"># open-source</div>
+        <div class="content-card-title">Open Source</div>
+        <div class="content-card-sub">Agent router patterns · Multi-agent frameworks · Reference architectures</div>
+      </div>
+    </div>
+
+    <!-- Connect -->
+    <div class="section-heading">
+      <h2>Connect</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="connect-row">
+      <a class="connect-btn btn-primary" href="#">⟶ LinkedIn</a>
+      <a class="connect-btn btn-ghost" href="#">✉ debmalya84@gmail.com</a>
+      <a class="connect-btn btn-ghost" href="#">📍 Bengaluru, India</a>
+    </div>
+
+  </div><!-- /readme-body -->
+
+  <div class="readme-footer">
+    <span>debmalya-roy / README.md</span>
+    <span>B.E. Computer Science · Jadavpur University · 2007</span>
+  </div>
+
+</div><!-- /readme-wrapper -->
+
+<div class="export-note">
+  ▸ This is a visual preview. The raw README.md file (Markdown) is included alongside this HTML for direct paste into your GitHub profile repo.
+</div>
+
+</body>
+</html>
